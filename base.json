@@ -3,7 +3,7 @@
       "precio": 500,
       "id": 1,
       "title": "Remera VW vintage",
-      "thumbnailUrl": "/Assets/img/galeria1.jpg",
+      "thumbnailUrl": "./Assets/img/galeria1.jpg",
       "alt": "Remera VW vintage"
     },
     {
