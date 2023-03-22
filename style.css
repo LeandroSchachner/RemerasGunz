@@ -11,7 +11,7 @@
 }
 
 .background {
-  background-image: url(/Assets/img/banner\ central.jpg);
+  background-image: url(./Assets/img/banner\ central.jpg);
   height: 700px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,7 +24,7 @@
 
 
 .banner {
-  background-image: url(/Assets/img/banner2.jpg);
+  background-image: url(./Assets/img/banner2.jpg);
   height: 700px;
   background-repeat: no-repeat;
   background-size: cover;
