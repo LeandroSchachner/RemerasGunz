@@ -1,4 +1,5 @@
 [
+  [
     {
       "precio": 500,
       "id": 1,
@@ -41,4 +42,93 @@
       "thumbnailUrl": "./Assets/img/galeria6.jpg",
       "alt": "Remera roja solida"
     }
+  ],
+  [
+    {
+      "precio": 500,
+      "id": 7,
+      "title": "Remera Roja Sombrero",
+      "thumbnailUrl": "./Assets/img/galeria7.jpg",
+      "alt": "Remera VW vintage"
+    },
+    {
+      "precio": 300,
+      "id": 8,
+      "title": "Remera Lisa Lentes",
+      "thumbnailUrl": "./Assets/img/galeria8.jpg",
+      "alt": "Remera Master skate"
+    },
+    {
+      "precio": 100,
+      "id": 9,
+      "title": "Remera Roja Lugo",
+      "thumbnailUrl": "./Assets/img/galeria9.jpg",
+      "alt": "Remera California"
+    },
+    {
+      "precio": 550,
+      "id": 10,
+      "title": "Remera Bordo Rubia",
+      "thumbnailUrl": "./Assets/img/galeria10.jpg",
+      "alt": "Remera Fruits blanca"
+    },
+    {
+      "precio": 100,
+      "id": 11,
+      "title": "Remera Bordo niños",
+      "thumbnailUrl": "./Assets/img/galeria11.jpg",
+      "alt": "Remera black work"
+    },
+    {
+      "precio": 150,
+      "id": 12,
+      "title": "Remera Rosa Campo",
+      "thumbnailUrl": "./Assets/img/galeria12.jpg",
+      "alt": "Remera roja solida"
+    }
+  ],
+  [
+    {
+      "precio": 500,
+      "id": 13,
+      "title": "Remera Rosa City",
+      "thumbnailUrl": "./Assets/img/galeria13.jpg",
+      "alt": "Remera VW vintage"
+    },
+    {
+      "precio": 300,
+      "id": 14,
+      "title": "Remera Roja Urban",
+      "thumbnailUrl": "./Assets/img/galeria14.jpg",
+      "alt": "Remera Master skate"
+    },
+    {
+      "precio": 100,
+      "id": 15,
+      "title": "Remera Rosa Blue",
+      "thumbnailUrl": "./Assets/img/galeria15.jpg",
+      "alt": "Remera California"
+    },
+    {
+      "precio": 550,
+      "id": 16,
+      "title": "Remera Naranka sport",
+      "thumbnailUrl": "./Assets/img/galeria16.jpg",
+      "alt": "Remera Fruits blanca"
+    },
+    {
+      "precio": 100,
+      "id": 17,
+      "title": "Remera Bordo Jean",
+      "thumbnailUrl": "./Assets/img/galeria17.jpg",
+      "alt": "Remera black work"
+    },
+    {
+      "precio": 150,
+      "id": 18,
+      "title": "Remera Black Sport",
+      "thumbnailUrl": "./Assets/img/galeria18.jpg",
+      "alt": "Remera roja solida"
+    }
   ]
+]

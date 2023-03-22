@@ -28,7 +28,8 @@ const fetchData = async () => {
   try {
     const res = await fetch("base.json");
     const data = await res.json();
-    pintarCards(data);
+    pintarCards(data[0],[1],[2]);
+    console.log(data[2]);
   } catch (error) {
     console.log(error);
   }
@@ -47,6 +48,10 @@ const pintarCards = (data) => {
   cards.appendChild(fragment);
   console.log(fragment);
 };
+
+
+
+
 
 const addCarrito = (e) => {
   e.preventDefault();
@@ -85,7 +90,7 @@ const pintarCarrito = () => {
 
     //BOTONES
     templateCarrito.querySelector(".btn-danger").dataset.id = producto.id;
-    templateCarrito.querySelector(".btn-info").dataset.id = producto.id;
+    templateCarrito.querySelector(".btn-success").dataset.id = producto.id;
     const clone = templateCarrito.cloneNode(true);
     fragment.appendChild(clone);
   });
@@ -130,7 +135,7 @@ const pintarFooter = () => {
 };
 
 const btnAccion = (e) => {
-  if (e.target.classList.contains("btn-info")) {
+  if (e.target.classList.contains("btn-success")) {
     //console.log(carrito[e.target.dataset.id]);
     const producto = carrito[e.target.dataset.id];
     producto.cantidad++;
