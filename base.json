@@ -3,42 +3,42 @@
       "precio": 500,
       "id": 1,
       "title": "Remera VW vintage",
-      "thumbnailUrl": "/Assets/img/galeria1.jpg",
+      "thumbnailUrl": "./Assets/img/galeria1.jpg",
       "alt": "Remera VW vintage"
     },
     {
       "precio": 300,
       "id": 2,
       "title": "Remera Master skate",
-      "thumbnailUrl": "/Assets/img/galeria2.jpg",
+      "thumbnailUrl": "./Assets/img/galeria2.jpg",
       "alt": "Remera Master skate"
     },
     {
       "precio": 100,
       "id": 3,
       "title": "Remera California",
-      "thumbnailUrl": "/Assets/img/galeria3.jpg",
+      "thumbnailUrl": "./Assets/img/galeria3.jpg",
       "alt": "Remera California"
     },
     {
       "precio": 550,
       "id": 4,
       "title": "Remera Fruits blanca",
-      "thumbnailUrl": "/Assets/img/galeria4.jpg",
+      "thumbnailUrl": "./Assets/img/galeria4.jpg",
       "alt": "Remera Fruits blanca"
     },
     {
       "precio": 100,
       "id": 5,
       "title": "Remera black work",
-      "thumbnailUrl": "/Assets/img/galeria5.jpg",
+      "thumbnailUrl": "./Assets/img/galeria5.jpg",
       "alt": "Remera black work"
     },
     {
       "precio": 150,
       "id": 6,
       "title": "Remera roja solida",
-      "thumbnailUrl": "/Assets/img/galeria6.jpg",
+      "thumbnailUrl": "./Assets/img/galeria6.jpg",
       "alt": "Remera roja solida"
     }
   ]
