@@ -5,15 +5,15 @@ const templateCard = document.getElementById("template-card").content;
 const templateFooter = document.getElementById("template-footer").content;
 const templateCarrito = document.getElementById("template-carrito").content;
 const fragment = document.createDocumentFragment();
-let carrito = {};
+const contador = document.getElementById('contador')
+let carrito = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchData();
-  if (localStorage.getItem('carrito')) {
-    carrito = JSON.parse(localStorage.getItem('carrito'))
-    pintarCarrito()
+  if (localStorage.getItem("carrito")) {
+    carrito = JSON.parse(localStorage.getItem("carrito"));
+    pintarCarrito();
   }
-  
 });
 
 cards.addEventListener("click", (e) => {
@@ -28,8 +28,8 @@ const fetchData = async () => {
   try {
     const res = await fetch("base.json");
     const data = await res.json();
-    pintarCards(data[0],[1],[2]);
-    console.log(data[2]);
+    pintarCards(data[0]);
+    //console.log(data);
   } catch (error) {
     console.log(error);
   }
@@ -41,7 +41,7 @@ const pintarCards = (data) => {
     templateCard.querySelector(".card-text").textContent = producto.precio;
     templateCard.querySelector(".card-image").src = producto.thumbnailUrl;
     templateCard.querySelector(".btn-secondary").dataset.id = producto.id;
-
+    
     const clone = templateCard.cloneNode(true);
     fragment.appendChild(clone);
   });
@@ -49,17 +49,21 @@ const pintarCards = (data) => {
   console.log(fragment);
 };
 
-
-
-
-
 const addCarrito = (e) => {
   e.preventDefault();
   // console.log(e.target);
   // console.log(e.target.classList.contains('btn-secondary'));
   if (e.target.classList.contains("btn-secondary")) {
+    Toastify({
+
+      text: "Se agrego al carrito",
+      style: "green ",
+      duration: 3000
+      
+      }).showToast();
     setCarrito(e.target.parentElement);
   }
+  
   e.stopPropagation();
 };
 
@@ -78,50 +82,69 @@ const setCarrito = (objeto) => {
   pintarCarrito();
 };
 
+
+
+
 const pintarCarrito = () => {
-  console.log(carrito);
+  
   items.innerHTML = "";
   Object.values(carrito).forEach((producto) => {
     templateCarrito.querySelector("th").textContent = producto.id;
     templateCarrito.querySelectorAll("td")[0].textContent = producto.title;
     templateCarrito.querySelectorAll("td")[1].textContent = producto.cantidad;
-    templateCarrito.querySelector("span").textContent =
-      producto.precio * producto.cantidad;
+    templateCarrito.querySelector("span").textContent = producto.precio * producto.cantidad;
+    
+    
 
     //BOTONES
     templateCarrito.querySelector(".btn-danger").dataset.id = producto.id;
     templateCarrito.querySelector(".btn-success").dataset.id = producto.id;
     const clone = templateCarrito.cloneNode(true);
-    fragment.appendChild(clone);
+    fragment.appendChild(clone); 
+
+     
+    
   });
   items.appendChild(fragment);
 
   pintarFooter();
+  
+  
 
-  localStorage.setItem('carrito', JSON.stringify(carrito))
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
 const pintarFooter = () => {
   footer.innerHTML = "";
   if (Object.keys(carrito).length === 0) {
     footer.innerHTML = `<th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>`;
+    contador.innerHTML = 0;
 
     return;
   }
+  
 
   const nCantidad = Object.values(carrito).reduce(
     (acc, { cantidad }) => acc + cantidad,
     0
+    
   );
+  contador.innerHTML = nCantidad
+    
+
   const nPrecio = Object.values(carrito).reduce(
     (acc, { cantidad, precio }) => acc + cantidad * precio,
     0
   );
-  console.log(nPrecio);
-
+  
+    
   templateFooter.querySelectorAll("td")[0].textContent = nCantidad;
   templateFooter.querySelector("span").textContent = nPrecio;
 
+  
+
+   
+  
   const clone = templateFooter.cloneNode(true);
   fragment.appendChild(clone);
 
@@ -129,9 +152,23 @@ const pintarFooter = () => {
 
   const boton = document.querySelector("#vaciar-carrito");
   boton.addEventListener("click", () => {
+    Toastify({
+
+      text: "Se vació el carrito",
+      duration: 3000,
+      style: {
+        background: "#d45a02"
+      }
+      }).showToast();
     carrito = {};
+    
     pintarCarrito();
+    
+    
   });
+  
+  
+  
 };
 
 const btnAccion = (e) => {
@@ -149,7 +186,9 @@ const btnAccion = (e) => {
     if (producto.cantidad === 0) {
       delete carrito[e.target.dataset.id];
     }
+    
     pintarCarrito();
+    
   }
   e.stopPropagation();
 };

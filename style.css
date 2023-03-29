@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:ital,wght@0,300;0,400;1,100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 .container-fluid.no-padding {
   padding: 0;
@@ -10,22 +11,50 @@
   border-radius: 50%;
 }
 
-.background {
-  background-image: url(./Assets/img/banner\ central.jpg);
-  height: 700px;
-  background-repeat: no-repeat;
-  background-size: cover;
+.navbar-nav a:hover {
+  background-color: #fff;
+  color: black !important;
+}
+.navbar-brand img {
+  border-radius: 50%;
 }
 
+.background {
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: changeBanner 24s infinite;
+}
 
+@keyframes changeBanner {
+  0% {
+    background-image: url("./Assets/img/banner\ central.jpg");
+  }
+  33% {
+    background-image: url("./Assets/img/pexels-tima-miroshnichenko-8727380.jpg");
+  }
+  66% {
+    background-image: url("./Assets/img/pexels-bankole-adeoni-5576289.jpg");
+  }
+  100% {
+    background-image: url("./Assets/img/banner\ central.jpg");
+  }
+}
 
-
+.icon {
+  font-size: 40px;
+  color: #fff;
+  transition: 100ms;
+}
+.icon:hover {
+  color: #d45a02;
+  filter: drop-shadow(1px 1px);
+}
 
 .carrito {
   border: 4px solid #4d4d4d;
   border-radius: 15px;
 }
-
 
 .banner {
   background-image: url(./Assets/img/banner2.jpg);
@@ -33,8 +62,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
 .gunz {
   color: #d45a02 !important;
+  font-size: 3rem;
 }
 .textDecoration {
   color: #d45a02;
@@ -44,6 +76,7 @@
   font-family: "Russo One", sans-serif;
 }
 .navbar-nav,
+footer,
 .btn,
 .title,
 .table th,
@@ -51,19 +84,15 @@ h4 {
   font-family: "Roboto Mono", monospace;
 }
 .galery img {
+  width: 400px;
   border-radius: 15px;
   transition: 90ms;
 }
 .galery img:hover {
   filter: drop-shadow(5px 5px);
 }
-
-.navbar-nav a:hover {
-  background-color: #fff;
-  color: black !important;
-}
-.navbar-brand img {
-  border-radius: 50%;
+footer {
+  background-color: #4b4b4b;
 }
 
 @media (max-width: 767px) {
@@ -79,5 +108,14 @@ h4 {
   .banner {
     height: 300px;
     margin-bottom: 15px;
+  }
+  .icon {
+    font-size: 25px;
+  }
+  .gunz {
+    font-size: 2.5rem;
+  }
+  footer {
+    height: 20vh;
   }
 }
